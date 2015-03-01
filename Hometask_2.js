@@ -1,4 +1,4 @@
-var text = "It was a hard days night";
+var text = "It was a hard days night ";
 
 var counter = 0;
 var letterCount = 0;
@@ -13,28 +13,29 @@ while (counter < text.length) {
        
         if (letterCount >= 5) {
      		fiveOrMoreLettersWordCounter++;
-     	}        
-     }
+     	}
+
+    }
 
     if (text[counter] == " ") {    	
    		 
-   		if (letterCount <= 3) {
-     		threeOrLessLettersWordCounter++;
-     	}
+         if (letterCount <= 3) {
+            threeOrLessLettersWordCounter++;
+        } 
 
-     	if (letterCount == 4) {
-     		fourLettersWordCounter++;
-     	}     	
+        if (letterCount == 4) {
+            fourLettersWordCounter++;
+        }      		   	
      	
      	letterCount = 0;
-     	
+
      }
-    
-    counter++;
+
+     counter++;
 }    	
   	    	
 
 console.log (threeOrLessLettersWordCounter, "word(s) with 3 or less letters");
-console.log (fourLettersWordCounter, "word(s) with 4 or less letters");
+console.log (fourLettersWordCounter, "word(s) with 4 letters");
 console.log (fiveOrMoreLettersWordCounter, "word(s) with 5 or more letters");
 
