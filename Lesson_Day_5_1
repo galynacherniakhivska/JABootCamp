@@ -1,0 +1,17 @@
+var STATE_TITLE =1;
+var STATE_NUM_PAGES = 2;
+
+var state = 1;
+
+switch (state) {
+
+	case STATE_TITLE:
+		console.log ('State is Title');
+		break;
+		case STATE_NUM_PAGES:
+			console.log ('State is num pages');
+		break;	
+		default:
+		console.log ('Unknown input');
+		break;
+}
