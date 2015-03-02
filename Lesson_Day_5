@@ -1,0 +1,212 @@
+/*var state = 1;
+var favBook = {};
+
+var SATATE_TITLE = 1;
+var STATE_NUM_PAGES = 1;
+
+function openUserInput() {
+	process.stdin.setEncoding('utf-8');
+	process.stdin.resume();
+	process.stdin.on('data', onUserInput);	
+}
+
+function onUserInput(input) {
+
+	input = normalizeInput(input)
+	
+	if (input == "exit") {
+		process.exit();
+	} 
+	
+	switch (state) {
+		case SATATE_TITLE:
+			favBook.title = input;
+			STATE_NUM_PAGES:
+			console.log("Please enter the number of pages");
+		break;
+		switch STATE_NUM_PAGES:
+			favBook.numPages = +input;
+			console.log(favBook.title, favBook.numPages);
+		break;
+		}
+	
+}
+
+function normalizeInput(input) {
+	return input.trim();
+}
+
+function printBanner() {
+	console.log("Hello, welcome to Book Worm!");
+	console.log("type exit to exit");
+	console.log("Enter a title of your favorite book");
+}
+
+openUserInput();
+printBanner();
+
+//in JS there are no constants
+*/
+//====================================================================
+/*var friends = ['Nick', 'Jamie', 'Bob'];
+var i = 0;
+
+friends[3]='Pete';
+
+friends[friends.length] = 'Mary';
+
+console.log (friends);
+
+friends [2] = 'Carl';
+
+console.log (friends);*/
+//======================================================================
+/*var arr = [1, 3, 2, 2, 3, 4, 5, 3];
+
+var i = 0;
+var min = Number.MAX_VALUE;
+
+while (i< arr.length) {
+	var current = arr[i];
+
+	if (current < min) {
+		min = current;
+	}
+	i++;
+}
+
+console.log (min);*/
+
+//============================================================
+
+/*var arr = ['John', 'Pete', 'Mary'];
+var name = 'Carl';
+
+//arr.push ('Mary');
+//arr.unshift ('Mary');
+
+console.log (arr, arr.length);
+console.log();
+
+var name = arr.shift ();
+console.log (arr, name);*/
+
+//=============================================================
+
+/*var arr = ['John', 'Pete', 'Mary'];
+
+console.log (arr);
+
+var start = 1;
+var deleteCount = 0;
+var name1 = 'Carl';
+var name2 = 'Jamie';
+
+//arr.splice (start, deleteCount, name1, name2);
+//arr.splice (start, Infinity);
+
+var removed = arr.splice (start);
+
+console.log (arr);
+console.log (removed);*/
+
+//=================================================================
+
+/*var arr = ['John', 'Pete', 'Mary'];
+
+var i = 0;
+
+for (var i =0; i<arr.length; i++) {
+	console.log (arr[i]);
+}*/
+
+// то же самое что и 
+//while (i<arr.lenght) {
+//	i++;
+//}
+
+/*var arr = ['John', 'Pete', 'Mary'];
+var victim = 'Pete';
+
+for (var i = 0; i < arr.length; i++) {
+	if (arr[i] == victim) {
+		arr.splice(i, 1);
+		break;
+	}
+}
+console.log(arr);*/
+
+/*var arr = ['John', 'Pete', 'Mary'];
+var i = 0;
+var sum = 0;
+for ( ; i<=10; i++) {
+	sum += i;
+}
+console.log (sum);*/
+
+/*var favBook1 = {
+	name: 'The War',
+	pageCount: 200
+};
+
+var favBook2 = {
+	name: 'The Piece',
+	pageCount: 20000000
+};
+
+var arr = [favBook1, favBook2];
+
+console.log (arr[0].name);*/
+
+/*var arr = [1, 3, 2, 2, 3, 4, 5, 3];
+
+function contains (haystack, needle) {
+	for (var i = 0; 1<haystack.length; i++) {
+		if (haystack[i] == needle) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function getUnique(arr) {
+	var result = [];
+
+	for (var i =0; i <arr.length; i ++ ) {
+		if (!contains(result, arr[i])) {
+			result.push(arr[i]);
+		}
+	}
+	return result;
+}
+
+console.log (getUnique ([1, 1]));*/
+
+var arr = [1, 3, 2, 2, 3, 1, 4, 5, 3];
+arr.sort();
+
+console.log (arr);
+
+var startIndex = 0;
+var el = arr[0];
+
+for (var i = 1; i <= arr.length; i++) {
+	if (arr[i] != el) {
+		var numDeleted = i - startIndex - 1;
+		arr.splice (startIndex, numDeleted);
+		//console.log ('Found new element', i);
+		
+		//startIndex = 1;
+		i -= numDeleted;
+		startIndex = i;
+		el = arr[i];
+
+
+		//console.log (i, el, startIndex, arr[i]);
+
+		//break;
+	}
+
+}
+
+console.log (arr);
