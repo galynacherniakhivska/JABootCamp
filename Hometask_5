@@ -1,0 +1,38 @@
+var book1 = {
+	title: 'Pride & Prejustice'
+};
+
+var book2 = {
+	title: 'Bridgit Jones Diary'
+}
+
+var books = [book1, book2];
+
+var i = 0;
+console.log ("We have following books stored: \n");
+
+for (var i =0; i<books.length; i++) {
+	console.log (books[i].title);
+}
+
+console.log();
+
+var bookToBeDeletedByTitle = 'Pride & Prejustice';
+
+for (var i = 0; i < books.length; i++) {
+	if (books[i].title == bookToBeDeletedByTitle) {
+		books.splice(i, 1);
+		break;
+	}
+}
+
+console.log ("Following book was deleted: ", bookToBeDeletedByTitle);
+//console.log (books, books.length); //to check which books are left and the array length
+
+books.unshift (titleOfTheBookToBeAdded  = {
+	title:'Tales'});
+
+console.log ("Following book was added: ", titleOfTheBookToBeAdded.title);
+console.log();
+
+
