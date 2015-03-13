@@ -17,22 +17,47 @@ for (var i =0; i<books.length; i++) {
 
 console.log();
 
-var bookToBeDeletedByTitle = 'Pride & Prejustice';
+function deleteBookByTitle (bookToBeDeletedByTitle) {
 
 for (var i = 0; i < books.length; i++) {
 	if (books[i].title == bookToBeDeletedByTitle) {
 		books.splice(i, 1);
+		console.log ("Following book was deleted: ", bookToBeDeletedByTitle);
+		//console.log (books, books.length); //to check which books are left and the array length
+	}
+		else {console.log ("Sorry, such book does not exist");
+		//console.log (books, books.length); //to check which books are left and the array length
 		break;
 	}
 }
-
-console.log ("Following book was deleted: ", bookToBeDeletedByTitle);
-//console.log (books, books.length); //to check which books are left and the array length
-
-books.unshift (titleOfTheBookToBeAdded  = {
-	title:'Tales'});
-
-console.log ("Following book was added: ", titleOfTheBookToBeAdded.title);
-console.log();
+}
 
 
+function addBookByTitle (titleOfTheBookToBeAdded) {
+
+books[books.length] = {
+	title: titleOfTheBookToBeAdded};
+
+console.log ("Following book was added: ", titleOfTheBookToBeAdded);
+//console.log (books, books.length);
+console.log(); 
+}
+
+function updateBook (bookToBeUpdated, authorToBeUpdated) {
+
+for (var i =0; i<books.length; i++) {
+	
+	if (books[i].title == bookToBeUpdated) {
+		books[i].author = authorToBeUpdated;
+		console.log (books[i].title, "author is ", books[i].author);
+		break;
+	}
+		
+	}
+}
+
+deleteBookByTitle ('Pride & Prejustice');
+addBookByTitle ("Tales");
+updateBook ("Bridgit Jones Diary", "Helen Feedling");
+
+console.log (books);
