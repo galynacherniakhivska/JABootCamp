@@ -35,12 +35,21 @@ for (var i = 0; i < books.length; i++) {
 
 function addBookByTitle (titleOfTheBookToBeAdded) {
 
-books[books.length] = {
+for (var i =0; i<books.length; i++) {
+	
+	if (books[i].title == titleOfTheBookToBeAdded) {
+		console.log ("Sorry, book with ", titleOfTheBookToBeAdded, " title already stored, so we are not able to add it one more time");
+		break;
+	}
+		else {books[books.length] = {
 	title: titleOfTheBookToBeAdded};
+	console.log ("Following book was added: ", titleOfTheBookToBeAdded);
+	//console.log (books, books.length);
+	console.log(); 
+		break;
+	}
 
-console.log ("Following book was added: ", titleOfTheBookToBeAdded);
-//console.log (books, books.length);
-console.log(); 
+}
 }
 
 function updateBook (bookToBeUpdated, authorToBeUpdated) {
@@ -52,12 +61,16 @@ for (var i =0; i<books.length; i++) {
 		console.log (books[i].title, "author is ", books[i].author);
 		break;
 	}
-		
+		else {console.log ("Sorry, book with", bookToBeUpdated, " does not exist, so we are not able to update it");
+		//console.log (books, books.length); //to check which books are left and the array length
+		break;
 	}
+}
 }
 
 deleteBookByTitle ('Pride & Prejustice');
-addBookByTitle ("Tales");
-updateBook ("Bridgit Jones Diary", "Helen Feedling");
+addBookByTitle ("Bridgit Jones Diary");
+updateBook ("Bridgit Jones", "Helen Feedling");
 
 console.log (books);
+
